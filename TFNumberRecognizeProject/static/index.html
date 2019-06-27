@@ -4,25 +4,52 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+
     <script src="jquery-3.3.1.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body style="margin: 0">
-<div>
-    <canvas width="200" height="200" style="border-style: dashed;"></canvas>
-</div>
-<div>
-    图像数据预览：
-    <canvas id="num-preview" width="28" height="28"></canvas>
-</div>
-<div>
-    <label for="target-num">关联数字：</label><input id="target-num" type="number">
-</div>
-<div id="result">
-</div>
-<div>
-    <button id="btn-clear">清空</button>
-    <button id="btn-train">训练</button>
-    <button id="btn-recognize">识别</button>
+<div style="margin: 5px;display: flex;flex-direction: row;">
+    <div class="card">
+        <div class="card-header">在此处写数</div>
+        <div class="card-body">
+            <div>
+                <canvas width="200" height="200" style="display: block;border: dashed;"></canvas>
+            </div>
+            <div style="text-align: center;margin-top: 5px;">
+                <button id="btn-clear" class="btn btn-primary">清空</button>
+            </div>
+        </div>
+        <div class="card-header">
+            图像数据预览：
+        </div>
+        <div class="card-body" style="text-align: center;">
+            <canvas id="num-preview" width="28" height="28" style="border-style: solid;border-width: 1px;"></canvas>
+        </div>
+    </div>
+
+    <div style="width: 10px;"></div>
+
+    <div class="card">
+        <div class="card-header">训练</div>
+        <div class="card-body">
+            <div>
+                <label for="target-num">关联数字：</label>
+                <input id="target-num" type="number" style="width: 100px;">
+                <button id="btn-train" class="btn btn-primary">训练</button>
+            </div>
+            <div id="train-status"></div>
+        </div>
+        <div class="card-header">识别</div>
+        <div class="card-body">
+            <div>
+                <button id="btn-recognize" class="btn btn-primary">识别</button>
+            </div>
+            <div id="result">
+            </div>
+        </div>
+    </div>
 </div>
 <script src="app.js"></script>
 </body>

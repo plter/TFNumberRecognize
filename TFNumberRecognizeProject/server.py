@@ -32,7 +32,7 @@ class RecognizeHandler(tornado.web.RequestHandler):
             np_photo_data = ((255 - np.array(photo_data, dtype=np.uint8)) / 255.0).reshape(28, 28)
 
             result = ml.recognize(np_photo_data)
-            self.write(f"{result}")
+            self.write(json.dumps(result))
         else:
             self.write("Argument error")
 
