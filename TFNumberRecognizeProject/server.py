@@ -8,6 +8,11 @@ import tornado.web
 import ml
 
 
+class RootHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.redirect('/static/index.html')
+
+
 class TrainHandler(tornado.web.RequestHandler):
     def post(self):
         if 'data' in self.request.arguments:
@@ -40,6 +45,7 @@ class RecognizeHandler(tornado.web.RequestHandler):
 def make_app():
     return tornado.web.Application(
         [
+            (r"/", RootHandler),
             (r"/train", TrainHandler),
             (r"/recognize", RecognizeHandler),
         ],
