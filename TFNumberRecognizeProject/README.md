@@ -8,5 +8,5 @@
     ```shell
     python server.py
     ```
-1. Visit `http://127.0.0.1:8888` 
-    ![](FrontEndScreenShot.png =500x)
+1. Visit `http://127.0.0.1:8888`   
+    ![](FrontEndScreenShot.png)
