@@ -41,4 +41,4 @@ def recognize(image_data):
 
 
 def train(src, dest):
-    model.fit(np.array([src]), np.array([dest]), epochs=10, callbacks=[cp_callback])
+    model.fit(np.array([src]), np.array([dest]), epochs=5, callbacks=[cp_callback])
